@@ -1,0 +1,22 @@
+To solve this issue, we need to be mindful of CSS specificity.  One approach is to refactor the CSS to avoid conflicts. Here's a revised version:
+
+```css
+div {
+  font-size: 16px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.special-paragraph {
+  font-size: 14px;
+}
+
+/* Instead of targeting 'div p', use a class or ID for finer control */
+.smaller-paragraph {
+  font-size: 12px;
+}
+```
+
+Now,  the `font-size` of paragraph elements is consistently 18px unless specifically overridden by a class like `.smaller-paragraph`. This approach improves readability and maintainability.
